@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app-{{ .Values.color }}
+  name: web-app-{{ .Values.color }}   # unique deployment name per color
   labels:
     app: {{ .Values.color }}-webserver
 spec:
@@ -9,12 +9,12 @@ spec:
   selector:
     matchLabels:
       app: webserver
-      ver: {{ .Values.color }}
+      ver: {{ .Values.color }}       # match pods by color
   template:
     metadata:
       labels:
         app: webserver
-        ver: {{ .Values.color }}
+        ver: {{ .Values.color }}     # pods get color label
     spec:
       containers:
         - name: webserver-container

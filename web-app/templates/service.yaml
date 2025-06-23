@@ -3,14 +3,14 @@ kind: Service
 metadata:
   name: blue-green-service
   labels:
-    app: blue-webserver
+    app: blue-webserver   # This label can be more generic or fixed
 spec:
   type: NodePort
   selector:
     app: webserver
-    ver: {{ .Values.color }}
+    ver: {{ .Values.color }}     # this selects pods with label ver=blue or ver=green
   ports:
     - protocol: TCP
-      nodePort: 30010
+      nodePort: 30010            # fixed port shared for blue & green
       port: 80
       targetPort: 80
