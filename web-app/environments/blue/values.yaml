@@ -6,3 +6,8 @@ image:
 
 ingress:
   enabled: false
+
+service:
+  type: NodePort
+  nodePort: 30010
+  port: 80
