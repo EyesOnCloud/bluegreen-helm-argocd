@@ -1,6 +1,6 @@
 containerPort: 80
 
-serviceSelectorColor: green 
+serviceSelectorColor: blue 
 
 service:
   type: NodePort
